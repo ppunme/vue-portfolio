@@ -5,16 +5,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "regal-blue": "#E2B029",
-        "regal-green": "#CEE3DA",
+        "lavender-500": "#e4ecfd",
+        "lavender-600": "#d1d9e9",
         "navy-900": "#152238",
         "dark-gray-800": "#313131",
         "dark-gray-900": "#1f1f1f",
+        "black-900": "#000",
       },
       width: {
-        100: "26rem",
-        104: "27rem",
-        108: "28rem",
+        100: "25rem",
+        104: "26rem",
+        108: "27rem",
+        112: "28rem",
+        116: "29rem",
+        124: "31rem",
         128: "32rem",
         132: "33rem",
         136: "34rem",
@@ -64,11 +68,16 @@ module.exports = {
             transform: "translateX(0)",
           },
         },
+        fadeOut: {
+          "0%": { backgroundColor: "colors.red.300" },
+          "100%": { backgroundColor: "colors.transparent" },
+        },
       },
       animation: {
         "fade-in-down": "fade-in-down 0.8s ease-out",
         "fade-in-up": "fade-in-up 0.5s ease-out",
-        "bounce-in-right": "bounce-in-right 1s infinite",
+        "bounce-in-right": "bounce-in-right 1s ease-in-out 5",
+        "fade-out": "fadeOut 5s ease-in-out",
       },
     },
     listStyleType: {

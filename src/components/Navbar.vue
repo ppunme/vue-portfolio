@@ -11,7 +11,7 @@
       </h4>
     </button>
   </div>
-  <component :is="currentTab" class="animate-fade-in-up mt-3"></component>
+  <component :is="currentTab" class="animate-fade-in-up"></component>
 </template>
 
 <script>

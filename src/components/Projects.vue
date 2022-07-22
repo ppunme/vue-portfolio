@@ -1,50 +1,84 @@
 <template>
-  <div class="relative container-snap">
-    <div
-      class="absolute h-64 w-64 md:h-72 md:w-72 bg-regal-green rounded-full left-0 right-0 mx-auto sm:top-2 md:left-8 md:right-auto md:top-0 md:mx-0 lg:left-12 xl:left-16"
-    ></div>
-    <div class="absolute right-6 -top-3 animate-bounce-in-right">
-      <p class="text-xs text-blue-500 font-mono font-semibold">
-        Swipe <i class="fi fi-br-arrow-right"></i>
-      </p>
+  <div>
+    <div class="gap-2 ml-8 mb-8 hidden md:flex">
+      <button
+        @click="scrollToPrevItem"
+        class="flex justify-center rounded-full w-8 h-8 border-2 border-neutral-400 text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700"
+      >
+        <i class="fi fi-bs-angle-left flex self-center"></i>
+      </button>
+      <button
+        @click="scrollToNextItem"
+        class="flex justify-center rounded-full w-8 h-8 border-2 border-neutral-400 text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700"
+      >
+        <i class="fi fi-bs-angle-right flex self-center"></i>
+      </button>
     </div>
-    <div
-      class="relative snap-x snap-mandatory flex overflow-x-auto mx-auto w-80 sm:w-108 lg:w-132 xl:w-144 pt-2"
-    >
+    <div class="relative container-snap">
+      <!-- Circle background -->
       <div
-        v-for="item in items"
-        :key="item.index"
-        class="snap-start shrink-0 p-6 w-80 sm:w-108 lg:w-132 xl:w-144"
+        class="absolute h-64 w-64 md:h-72 md:w-72 bg-lavender-500 rounded-full left-0 right-0 mx-auto sm:top-2 md:left-8 md:right-auto md:top-0 md:mx-0 lg:left-12 xl:left-16 dark:bg-lavender-500/80"
+      ></div>
+
+      <!-- Swipe bounce -->
+      <div
+        class="absolute right-6 -top-3 animate-bounce-in-right temporary-bounce transition-opacity ease-in duration-700 opacity-100"
+      >
+        <p class="text-xs text-blue-500 font-mono font-semibold">
+          Swipe <i class="fi fi-br-arrow-right"></i>
+        </p>
+      </div>
+
+      <!-- Scroll snap -->
+      <div
+        class="relative snap-x snap-mandatory flex overflow-x-auto mx-auto w-80 sm:w-112 md:w-128 lg:w-132 xl:w-144 pt-2"
       >
         <div
-          class="flex flex-col md:flex-row gap-14 sm:gap-10 md:gap-3 lg:gap-6"
+          v-for="item in items"
+          :key="item.index"
+          class="snap-start shrink-0 p-6 w-80 sm:w-112 md:w-128 lg:w-132 xl:w-144"
         >
-          <div class="basis-2/3">
-            <img
-              class="shrink-0 w-full sm:w-4/5 md:w-full mx-auto rounded-lg drop-shadow-lg"
-              :src="item.img"
-            />
+          <div
+            class="flex flex-col md:flex-row gap-14 sm:gap-10 md:gap-5 lg:gap-6"
+          >
+            <div class="md:basis-3/5">
+              <img
+                class="shrink-0 w-full sm:w-4/5 md:w-full mx-auto rounded-lg drop-shadow-lg"
+                :src="item.img"
+              />
+            </div>
+            <div class="md:basis-2/5">
+              <div v-if="item.lang">
+                <p class="font-semibold">Frameworks</p>
+                <ul class="list-none mt-3">
+                  <li v-for="item in item.lang" :key="item.index" class="mb-2">
+                    <i class="fi fi-br-arrow-right mr-3"></i>{{ item }}
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="basis-1/3">
+
+          <div class="mt-6 xl:mt-12">
             <p class="font-bold">{{ item.projectName }}</p>
             <p class="mt-3">{{ item.projectDesc }}</p>
 
-            <div class="flex flex-row mt-3">
-              <a class="btn-icon">
-                <i class="bi bi-github"></i>
-              </a>
-              <a class="btn-icon ml-2" :href="item.link" target="_blank">
-                <i class="fi fi-br-clip flex self-center"></i>
-              </a>
+            <div class="flex-col space-y-3 mt-3">
+              <div class="flex items-center">
+                <a class="btn-icon-2">
+                  <i class="bi bi-github"></i>
+                </a>
+                <span class="ml-3">Github</span>
+              </div>
+
+              <div class="flex items-center">
+                <a class="btn-icon-2" :href="item.link" target="_blank">
+                  <i class="fi fi-br-link flex self-center"></i>
+                </a>
+                <span class="ml-3">Website</span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="mt-6">
-          <p class="font-semibold">Language &amp; Framework</p>
-          <ul class="list-none">
-            <li><i class="fi fi-br-arrow-right"></i> Vue.js</li>
-            <li><i class="fi fi-br-arrow-right"></i> Bootstrap</li>
-          </ul>
         </div>
       </div>
     </div>
@@ -52,10 +86,10 @@
 </template>
 
 <script>
-import invWeb1 from "../assets/screenshots/invoice-app-web-1.png";
-import invWeb2 from "../assets/screenshots/invoice-app-web-2.png";
-import invWeb3 from "../assets/screenshots/invoice-app-web-3.png";
-import invWeb4 from "../assets/screenshots/invoice-app-web-4.png";
+import ss1 from "../assets/screenshots/ss-invoices-app.png";
+import ss2 from "../assets/screenshots/ss-llama.png";
+import ss3 from "../assets/screenshots/ss-beauty.png";
+import ss4 from "../assets/screenshots/ss-anydrinks.png";
 
 export default {
   name: "Projects-comp",
@@ -64,48 +98,55 @@ export default {
     return {
       items: [
         {
-          projectName: "Invoice management App",
+          projectName: "Invoice management Website",
           projectDesc:
-            "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-          details: "project1 aaaaaaaa",
-          img: invWeb1,
+            "Users can use the website enter the data to create invoices, manage invoice status, and view monthly invoice summaries. The website is designed with a responsive design, which makes it compatible with all devices.",
+          img: ss1,
+          github: "https://github.com/ppunme/vue-invoice-app",
           link: "https://ppunme.github.io/vue-invoice-app/#/",
+          lang: ["Vue.js", "Bootstrap", "Firebase"],
         },
         {
-          projectName: "Foo2",
+          projectName: "Llama Yoga",
           projectDesc:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-          details: "project2 bbbbbbb",
-          img: invWeb2,
+            "Worked as a part of three-member team to developed code for client website primarily using Vue.js and WordPress",
+          img: ss2,
+          github: "https://github.com/YuriJ2020/llama-yoga-revamp",
+          link: "https://llamayoga.com.au/home",
+          lang: ["Vue.js", "Bootstrap", "WordPress"],
         },
         {
-          projectName: "Foo3",
+          projectName: "Beauty venue",
           projectDesc:
-            "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.",
-          details: "project3 cccccc",
-          img: invWeb3,
+            "Simple beauty salon website, implemented with HTML, CSS and NodeJS",
+          img: ss3,
+          github: "https://github.com/ppunme/Assessment2ServerSide",
+          link: "https://beauty-salon-nodejs.herokuapp.com/",
+          lang: ["HTML", "CSS", "NodeJS", "Bootstrap"],
         },
         {
-          projectName: "Foo4",
+          projectName: "Anydrinks",
           projectDesc:
-            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-          img: invWeb4,
+            "An ecommerce website that allows users to search and filter products, create an acccount and login to create orders and view previous orders. The website is developed by ReactJS and hosted by Firebase.",
+          img: ss4,
+          github: "https://github.com/ppunme/anydrinks",
+          link: "https://ppunme.github.io/anydrinks",
+          lang: ["ReactJS", "Bootstrap", "Firebase"],
         },
       ],
     };
   },
+  methods: {
+    scrollToNextItem() {
+      const scroller = document.querySelector(".snap-mandatory");
+      const itemWidth = document.querySelector(".snap-start").clientWidth;
+      scroller.scrollBy({ left: itemWidth, top: 0, behavior: "smooth" });
+    },
+    scrollToPrevItem() {
+      const scroller = document.querySelector(".snap-mandatory");
+      const itemWidth = document.querySelector(".snap-start").clientWidth;
+      scroller.scrollBy({ left: -itemWidth, top: 0, behavior: "smooth" });
+    },
+  },
 };
 </script>
-
-<style>
-/* Hide scrollbar for Chrome, Safari and Opera */
-.container-snap::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.container-snap {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-</style>

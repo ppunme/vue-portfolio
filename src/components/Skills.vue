@@ -1,19 +1,20 @@
 <template>
   <div
-    class="bg-gray-100 rounded-lg w-80 mx-auto gap-4 p-6 space-y-3 m-6 md:w-128 md:w-1/2 dark:border-transparent dark:bg-dark-gray-800"
+    class="bg-gray-100 rounded-lg w-72 sm:w-80 mx-auto gap-4 py-6 px-8 lg:py-10 lg:px-14 space-y-3 md:w-96 dark:bg-dark-gray-800"
   >
     <p class="font-semibold">Front-end development</p>
     <ul class="list-none">
       <li v-for="item in frontend" :key="item.index" class="p-3">
         <i class="fi fi-br-arrow-circle-right text-blue-500"></i
-        ><span class="pl-3">{{ item.name }}</span>
+        ><span class="pl-3">{{ item }}</span>
       </li>
     </ul>
+
     <p class="font-semibold">Back-end development</p>
     <ul class="list-none">
       <li v-for="item in backend" :key="item.index" class="p-3">
         <i class="fi fi-br-arrow-circle-right text-blue-500"></i
-        ><span class="pl-3">{{ item.name }}</span>
+        ><span class="pl-3">{{ item }}</span>
       </li>
     </ul>
   </div>
@@ -25,38 +26,8 @@ export default {
   components: {},
   data() {
     return {
-      frontend: [
-        {
-          name: "HTML & CSS",
-          color: "#ea580c",
-        },
-        {
-          name: "Vue.js",
-          color: "#3fb984",
-        },
-        {
-          name: "React.js",
-          color: "#5ed3f3",
-        },
-
-        {
-          name: "Foo4",
-        },
-      ],
-      backend: [
-        {
-          name: "Node.js",
-          color: "#ea580c",
-        },
-        {
-          name: "MySQL",
-          color: "#3fb984",
-        },
-        {
-          name: "MongoDB",
-          color: "#3fb984",
-        },
-      ],
+      frontend: ["HTML", "CSS", "Vue.js", "React.js"],
+      backend: ["Node.js", "MySQL", "MongoDB"],
     };
   },
 };
