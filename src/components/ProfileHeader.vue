@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row gap-6 p-4 md:flex-col md:gap-10 lg:flex-row">
+  <div class="flex flex-row gap-6 p-4 md:gap-10">
     <div class="basis-1/2 flex items-center">
       <img
         class="ml-auto mr-2 w-32 md:w-32 h-32 md:h-32 rounded-full ring-offset-4 ring-4 ring-lavender-600 dark:ring-offset-slate-900 dark:ring-lavender-500/50"

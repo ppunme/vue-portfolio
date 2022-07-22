@@ -10,9 +10,6 @@
     @apply bg-blue-500 text-white shadow-lg shadow-gray-500/50 hover:bg-blue-600 dark:shadow-black-900/50;
   }
   .btn-icon {
-    @apply cursor-pointer w-9 h-9 grid place-content-center rounded-md bg-slate-300 shadow-lg shadow-slate-300/50 hover:text-white hover:bg-blue-600 dark:shadow-black-900/50 dark:text-slate-900 dark:hover:text-white;
-  }
-  .btn-icon-2 {
     @apply cursor-pointer w-9 h-9 grid place-content-center rounded-md bg-blue-500 text-white shadow-lg shadow-gray-500/50 hover:text-white hover:bg-blue-600 dark:shadow-black-900/50;
   }
 }

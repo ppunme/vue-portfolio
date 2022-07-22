@@ -1,13 +1,13 @@
 <template>
   <div
-    class="w-80 md:w-128 mx-auto bg-gray-100 rounded-lg py-6 px-8 lg:py-10 lg:px-14 dark:bg-dark-gray-800"
+    class="w-80 md:w-128 mx-auto mb-4 bg-gray-100 rounded-lg py-6 px-8 lg:py-10 lg:px-14 dark:bg-dark-gray-800"
   >
-    <p class="my-4">
+    <p class="mb-4">
       Hello! My name is Poonnamee and I enjoy creating a website and producing
       quality work with attention to details. I am able to learn and understand
       new technologies.
     </p>
-    <p class="my-6">
+    <p class="mb-6">
       Well-organised person, Write clean and maintainable code, and
       self-motivated learner.
     </p>
@@ -37,12 +37,14 @@
         <span>GitHub</span>
       </div>
     </div>
-    <a
-      class="btn text-blue-500 border-2 border-blue-500 hover:bg-blue-500/[0.15]"
-      href="https://punportfolio.s3.ap-southeast-2.amazonaws.com/Resume.pdf"
-    >
-      Download CV
-    </a>
+    <div class="mb-2">
+      <a
+        class="btn text-blue-500 border-2 border-blue-500 hover:bg-blue-500/[0.15]"
+        href="https://punportfolio.s3.ap-southeast-2.amazonaws.com/Resume.pdf"
+      >
+        Download CV
+      </a>
+    </div>
   </div>
 </template>
 

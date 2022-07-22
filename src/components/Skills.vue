@@ -26,8 +26,8 @@ export default {
   components: {},
   data() {
     return {
-      frontend: ["HTML", "CSS", "Vue.js", "React.js"],
-      backend: ["Node.js", "MySQL", "MongoDB"],
+      frontend: ["HTML", "CSS", "Vue.js", "React"],
+      backend: ["Node.js", "MySQL", "MongoDB", "Firebase"],
     };
   },
 };

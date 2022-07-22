@@ -3,6 +3,14 @@ module.exports = {
   darkMode: "class",
   content: ["./public/index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
+    screens: {
+      sm: "640px",
+      md: "768px",
+      ipad: "820px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
       colors: {
         "lavender-500": "#e4ecfd",
@@ -13,6 +21,7 @@ module.exports = {
         "black-900": "#000",
       },
       width: {
+        68: "17rem",
         100: "25rem",
         104: "26rem",
         108: "27rem",
@@ -26,6 +35,7 @@ module.exports = {
         144: "36rem",
       },
       height: {
+        68: "17rem",
         128: "32rem",
         132: "33rem",
         144: "36rem",

@@ -3,12 +3,12 @@
     <div class="dark:bg-dark-gray-900 dark:text-white">
       <ToggleMode :darkMode="darkMode" :lightMode="lightMode" />
       <div
-        class="p-3 xl:px-20 md:flex md:flex-row md:gap-6 min-h-[calc(100vh_-_3rem)]"
+        class="p-3 xl:px-20 lg:flex lg:flex-row lg:gap-6 min-h-[calc(100vh_-_3rem)]"
       >
-        <div class="md:basis-1/4 lg:basis-2/5 md:pt-36 lg:pt-48">
+        <div class="lg:basis-2/5 lg:pt-48">
           <ProfileHeader />
         </div>
-        <div class="md:basis-3/4 lg:basis-3/5 sm:px-6">
+        <div class="lg:basis-3/5 sm:px-6">
           <Navbar />
         </div>
       </div>

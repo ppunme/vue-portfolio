@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center items-center mt-3 py-2 sm:py-6 gap-x-4">
+  <div class="flex justify-center items-center py-2 sm:py-6 gap-x-4">
     <button
       v-for="tab in tabs"
       :key="tab"
