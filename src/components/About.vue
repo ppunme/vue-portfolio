@@ -22,7 +22,10 @@
       </div>
       <div class="flex mb-3">
         <div class="hover:-translate-y-1 hover:text-blue-500 mr-2">
-          <a href="www.linkedin.com/in/poonnameengamrayab">
+          <a
+            href="https://www.linkedin.com/in/poonnameengamrayab"
+            target="_blank"
+          >
             <i class="bi bi-linkedin"></i>
           </a>
         </div>
@@ -30,7 +33,7 @@
       </div>
       <div class="flex mb-3">
         <div class="hover:-translate-y-1 hover:text-blue-500 mr-2">
-          <a href="https://github.com/ppunme">
+          <a href="https://github.com/ppunme" target="_blank">
             <i class="bi bi-github"></i>
           </a>
         </div>
