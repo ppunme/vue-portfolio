@@ -22,6 +22,12 @@
       </div>
       <div class="flex mb-3">
         <div class="hover:-translate-y-1 hover:text-blue-500 mr-2">
+          <a href="Tel:+66825523337"><i class="bi bi-telephone-fill"></i></a>
+        </div>
+        <span>+668 2552 3337</span>
+      </div>
+      <div class="flex mb-3">
+        <div class="hover:-translate-y-1 hover:text-blue-500 mr-2">
           <a
             href="https://www.linkedin.com/in/poonnameengamrayab"
             target="_blank"
@@ -43,7 +49,7 @@
     <div class="mb-2">
       <a
         class="btn text-blue-500 border-2 border-blue-500 hover:bg-blue-500/[0.15]"
-        href="https://punportfolio.s3.ap-southeast-2.amazonaws.com/Resume.pdf"
+        href="https://punportfolio.s3.ap-southeast-2.amazonaws.com/Resume-Poonnamee.pdf"
       >
         Download CV
       </a>
@@ -53,6 +59,6 @@
 
 <script>
 export default {
-  name: "AboutMe-comp",
+  name: "about-comp",
 };
 </script>

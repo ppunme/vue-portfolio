@@ -57,7 +57,7 @@
             </div>
           </div>
 
-          <div class="mt-5 md:mt-10 xl:mt-12">
+          <div class="mt-5 md:mt-12">
             <p class="font-bold">{{ item.projectName }}</p>
             <p class="mt-3">{{ item.projectDesc }}</p>
 

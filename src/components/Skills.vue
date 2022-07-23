@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-gray-100 rounded-lg w-72 sm:w-80 mx-auto gap-4 py-6 px-8 lg:py-10 lg:px-14 space-y-3 md:w-96 dark:bg-dark-gray-800"
+    class="bg-gray-100 mb-4 rounded-lg w-72 sm:w-80 mx-auto gap-4 py-6 px-8 lg:py-10 lg:px-14 space-y-3 md:w-96 dark:bg-dark-gray-800"
   >
     <p class="font-semibold">Front-end development</p>
     <ul class="list-none">
